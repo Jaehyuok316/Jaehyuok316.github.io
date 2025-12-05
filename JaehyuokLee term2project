@@ -162,7 +162,7 @@ let canFlip = true;
 
 
 function initGame() {
-    cards = [...symbols, ...symbols].sort(() => Math.random() - 0.5); // It duplicates card and can arrange cards randomly.
+    cards = [...symbols, ...symbols].sort(() => Math.random() - 0.5); // It replicates card and can arrange cards randomly.
     const grid = document.getElementById("grid");
     grid.innerHTML = ""; // deletes previous game's cards
 
