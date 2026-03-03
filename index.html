@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drag Shooter</title>
+
+<style>
+body {
+    margin: 0;
+    background: #0f172a;
+    color: #e5e7eb;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    user-select: none;
+}
+
+canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: radial-gradient(#020617, #020617);
+}
+
+.ui {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    z-index: 2;
+}
+
+.centerScreen {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(2,6,23,0.85);
+    text-align: center;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: #38bdf8;
+    color: #020617;
+    cursor: pointer;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<canvas id="gameCanvas"></canvas>
+
+<div class="ui">
+    Score: <span id="score">0</span><br>
+    Health: <span id="health">3</span>
+</div>
+
+<div class="centerScreen" id="startScreen">
+    <div id="highScores" style="margin-top:20px;font-size:16px"></div>
+    <h1>🎯 Shoot red </h1>
+    <p>Drag to aim, release to shoot<br>Works on phone & PC</p>
+    <button id="startBtn">START</button>
+</div>
+<button id="shootBtn" style="
+position:fixed;
+bottom:20px;
+right:20px;
+padding:20px 28px;
+font-size:18px;
+border:none;
+border-radius:50%;
+background:#facc15;
+color:#020617;
+z-index:5;
+display:none;
+">SHOOT</button>
+
+<div class="centerScreen" id="gameOverScreen" style="display:none">
+    <h1>💀 Game Over</h1>
+    <p>Final Score: <span id="finalScore">0</span></p>
+    <button id="restartBtn">RESTART</button>
+</div>
+
+<script src="shootinggame.js"></script>
+
+</body>
+</html>
